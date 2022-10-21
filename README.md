@@ -31,7 +31,7 @@ Certus Storage Device Erasure.
 ### What's the justification that this really does need to be signed for the whole world to be able to boot it?
 -------------------------------------------------------------------------------
 
-ADD-TEXT-HERE
+The main reason for this is to easier the effort of Certus Erasure user when booting the software products on machines where he needs to securely remove the data from the attached storage devices. The most affected users are the technicians working with the ITAD companies which are required to remove the data stored on a great amount of machines, on a daily basis.
 
 -------------------------------------------------------------------------------
 ### Who is the primary contact for security updates, etc.?
