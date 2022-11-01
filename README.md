@@ -25,7 +25,7 @@ Certus Software S.R.L.
 -------------------------------------------------------------------------------
 ### What product or service is this for?
 -------------------------------------------------------------------------------
-Certus Storage Device Erasure.
+Certus Erasure (https://www.certus.software/en/certus-erasure-for-storage-devices/)
 
 -------------------------------------------------------------------------------
 ### What's the justification that this really does need to be signed for the whole world to be able to boot it?
@@ -196,18 +196,19 @@ grub SBAT:
 ```
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 grub,2,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
-grub.certus,1,Certus Software S.R.L.,grub,2.06,mail:security@certussoftware.ro
+grub.debian,1,Debian,grub2,2.06-3,https://tracker.debian.org/pkg/grub2
+grub.certus,1,Certus Software S.R.L.,grub2,2.06-3,mail:security@certussoftware.ro
 ```
 
 -------------------------------------------------------------------------------
 ### Which modules are built into your signed grub image?
 -------------------------------------------------------------------------------
-`iso9660 linux normal search efi_gop efi_uga all_video gfxmenu`
+`iso9660 linux normal search efi_gop efi_uga all_video gfxmenu linuxefi`
 
 -------------------------------------------------------------------------------
 ### What is the origin and full version number of your bootloader (GRUB or other)?
 -------------------------------------------------------------------------------
-2.06 from https://www.gnu.org/software/grub/
+2.06-3 from https://salsa.debian.org/grub-team/grub/-/tree/debian/2.06-3/debian
 
 -------------------------------------------------------------------------------
 ### If your SHIM launches any other components, please provide further details on what is launched.
