@@ -36,7 +36,7 @@ The main reason for this is to easier the effort of Certus Erasure user when boo
 -------------------------------------------------------------------------------
 ### Why are you unable to reuse shim from another distro that is already signed?
 -------------------------------------------------------------------------------
-[your text here]
+Reusing the shim of another distribution would also require reusing the grub and kernel. We have to build our own kernel.
 
 -------------------------------------------------------------------------------
 ### Who is the primary contact for security updates, etc.?
@@ -79,7 +79,7 @@ We confirm that our shim binaries are built from the referenced tarball.
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-https://github.com/rhboot/shim/releases/tag/15.6
+https://github.com/rhboot/shim/releases/tag/15.7
 
 -------------------------------------------------------------------------------
 ### What patches are being applied and why:
@@ -121,12 +121,12 @@ Using upstream GRUB2 with shim_lock verifier.
 * CVE-2022-2601
 * CVE-2022-3775
 -------------------------------------------------------------------------------
-[your text here]
+Yes.
 
 -------------------------------------------------------------------------------
 ### If these fixes have been applied, have you set the global SBAT generation on your GRUB binary to 3?
 -------------------------------------------------------------------------------
-[your text here]
+Yes.
 
 -------------------------------------------------------------------------------
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
@@ -202,17 +202,17 @@ shim SBAT:
 
 ```
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
-shim.certus,1,Certus Software S.R.L.,shim,15.6,mail:security@certussoftware.ro
+shim,3,UEFI shim,shim,1,https://github.com/rhboot/shim
+shim.certus,1,Certus Software S.R.L.,shim,15.7,mail:security@certussoftware.ro
 ```
 
 grub SBAT:
 
 ```
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-grub,2,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
-grub.debian,1,Debian,grub2,2.06-3,https://tracker.debian.org/pkg/grub2
-grub.certus,1,Certus Software S.R.L.,grub2,2.06-3,mail:security@certussoftware.ro
+grub,3,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
+grub.debian,1,Debian,grub2,2.06-5,https://tracker.debian.org/pkg/grub2
+grub.certus,1,Certus Software S.R.L.,grub2,2.06-5,mail:security@certussoftware.ro
 ```
 
 -------------------------------------------------------------------------------
@@ -223,7 +223,7 @@ grub.certus,1,Certus Software S.R.L.,grub2,2.06-3,mail:security@certussoftware.r
 -------------------------------------------------------------------------------
 ### What is the origin and full version number of your bootloader (GRUB or other)?
 -------------------------------------------------------------------------------
-2.06-3 from https://salsa.debian.org/grub-team/grub/-/tree/debian/2.06-3/debian
+2.06-5 from https://salsa.debian.org/grub-team/grub/-/tree/debian/2.06-5/debian
 
 -------------------------------------------------------------------------------
 ### If your SHIM launches any other components, please provide further details on what is launched.
