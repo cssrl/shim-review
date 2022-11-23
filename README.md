@@ -34,6 +34,11 @@ Certus Erasure (https://www.certus.software/en/certus-erasure-for-storage-device
 The main reason for this is to easier the effort of Certus Erasure user when booting the software products on machines where he needs to securely remove the data from the attached storage devices. The most affected users are the technicians working with the ITAD companies which are required to remove the data stored on a great amount of machines, on a daily basis.
 
 -------------------------------------------------------------------------------
+### Why are you unable to reuse shim from another distro that is already signed?
+-------------------------------------------------------------------------------
+[your text here]
+
+-------------------------------------------------------------------------------
 ### Who is the primary contact for security updates, etc.?
 The security contacts need to be verified before the shim can be accepted. For subsequent requests, contact verification is only necessary if the security contacts or their PGP keys have changed since the last successful verification.
 
@@ -63,10 +68,10 @@ like keyserver.ubuntu.com, and preferably have signatures that are reasonably
 well known in the Linux community.)
 
 -------------------------------------------------------------------------------
-### Were these binaries created from the 15.6 shim release tar?
-Please create your shim binaries starting with the 15.6 shim release tar file: https://github.com/rhboot/shim/releases/download/15.6/shim-15.6.tar.bz2
+### Were these binaries created from the 15.7 shim release tar?
+Please create your shim binaries starting with the 15.7 shim release tar file: https://github.com/rhboot/shim/releases/download/15.7/shim-15.7.tar.bz2
 
-This matches https://github.com/rhboot/shim/releases/tag/15.6 and contains the appropriate gnu-efi source.
+This matches https://github.com/rhboot/shim/releases/tag/15.7 and contains the appropriate gnu-efi source.
 
 -------------------------------------------------------------------------------
 We confirm that our shim binaries are built from the referenced tarball.
@@ -87,7 +92,8 @@ No patches are applied.
 Using upstream GRUB2 with shim_lock verifier.
 
 -------------------------------------------------------------------------------
-### If shim is loading GRUB2 bootloader and your previously released shim booted a version of grub affected by any of the CVEs in the July 2020 grub2 CVE list, the March 2021 grub2 CVE list, or the June 7th 2022 grub2 CVE list:
+### If shim is loading GRUB2 bootloader and your previously released shim booted a version of grub affected by any of the CVEs in the July 2020 grub2 CVE list, the March 2021 grub2 CVE list, the June 7th 2022 grub2 CVE list, or the November 15th 2022 list, have fixes for all these CVEs been applied?
+
 * CVE-2020-14372
 * CVE-2020-25632
 * CVE-2020-25647
@@ -112,6 +118,17 @@ Using upstream GRUB2 with shim_lock verifier.
 * CVE-2022-28736
 * CVE-2022-28737
 
+* CVE-2022-2601
+* CVE-2022-3775
+-------------------------------------------------------------------------------
+[your text here]
+
+-------------------------------------------------------------------------------
+### If these fixes have been applied, have you set the global SBAT generation on your GRUB binary to 3?
+-------------------------------------------------------------------------------
+[your text here]
+
+-------------------------------------------------------------------------------
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
 ### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
 -------------------------------------------------------------------------------
@@ -122,7 +139,6 @@ First time submission, upstream GRUB2 and shim 15,6 have all above CVEs fixed.
 ### Is upstream commit [1957a85b0032a81e6482ca4aab883643b8dae06e "efi: Restrict efivar_ssdt_load when the kernel is locked down"](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=1957a85b0032a81e6482ca4aab883643b8dae06e) applied?
 ### Is upstream commit [75b0cea7bf307f362057cc778efe89af4c615354 "ACPI: configfs: Disallow loading ACPI tables when locked down"](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=75b0cea7bf307f362057cc778efe89af4c615354) applied?
 ### Is upstream commit [eadb2f47a3ced5c64b23b90fd2a3463f63726066 "lockdown: also lock down previous kgdb use"](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=eadb2f47a3ced5c64b23b90fd2a3463f63726066) applied?
-
 -------------------------------------------------------------------------------
 Yes.
 
@@ -152,7 +168,6 @@ N/A, first time submission.
 -------------------------------------------------------------------------------
 ### Which files in this repo are the logs for your build?
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
-
 -------------------------------------------------------------------------------
 `build_log.txt`
 
