@@ -17,6 +17,8 @@ COPY certus.cer /shim/pub.cer
 COPY sbat.certus.csv /shim/data/
 
 WORKDIR /shim
+#Make sbat_var.S parse right with buggy gcc/binutils
+RUN git checkout 657b2483ca6e9fcf2ad8ac7ee577ff546d24c3aa
 RUN make VENDOR_CERT_FILE=pub.cer
 
 RUN hexdump -Cv /shim/shimx64.efi > build
