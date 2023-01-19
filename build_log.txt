@@ -1,58 +1,58 @@
-Sending build context to Docker daemon  2.064MB
-Step 1/21 : FROM debian:bullseye
+Sending build context to Docker daemon  71.49MB
+Step 1/23 : FROM debian:bullseye
 bullseye: Pulling from library/debian
-f2f58072e9ed: Pulling fs layer
-f2f58072e9ed: Verifying Checksum
-f2f58072e9ed: Download complete
-f2f58072e9ed: Pull complete
-Digest: sha256:a288aa7ad0e4d443e86843972c25a02f99e9ad6ee589dd764895b2c3f5a8340b
+bbeef03cda1f: Pulling fs layer
+bbeef03cda1f: Verifying Checksum
+bbeef03cda1f: Download complete
+bbeef03cda1f: Pull complete
+Digest: sha256:534da5794e770279c889daa891f46f5a530b0c5de8bfbc5e40394a0164d9fa87
 Status: Downloaded newer image for debian:bullseye
- ---> 291bf168077c
-Step 2/21 : LABEL MAINTAINER Certus Software S.R.L. <security _AT_ certussoftware _DOT_ ro>
- ---> Running in 4c5de7da84d1
-Removing intermediate container 4c5de7da84d1
- ---> 99afb9f3ab3c
-Step 3/21 : LABEL VERSION ="1.0"
- ---> Running in 037429689a5e
-Removing intermediate container 037429689a5e
- ---> 32b677cb9f58
-Step 4/21 : LABEL DESCRIPTION ="Docker image to build shim-15.7 for Certus Software S.R.L."
- ---> Running in aa47f450c870
-Removing intermediate container aa47f450c870
- ---> 34ddbf272d5a
-Step 5/21 : RUN apt-get update -y
- ---> Running in 098230f22767
+ ---> 5c8936e57a38
+Step 2/23 : LABEL MAINTAINER Certus Software S.R.L. <security _AT_ certussoftware _DOT_ ro>
+ ---> Running in ce5f4fbe5f24
+Removing intermediate container ce5f4fbe5f24
+ ---> 7af073ceedb0
+Step 3/23 : LABEL VERSION ="1.0"
+ ---> Running in 139d8e5c6f6a
+Removing intermediate container 139d8e5c6f6a
+ ---> eea4bd5990a2
+Step 4/23 : LABEL DESCRIPTION ="Docker image to build shim-15.7 for Certus Software S.R.L."
+ ---> Running in 4e0490536eb5
+Removing intermediate container 4e0490536eb5
+ ---> 56765d23228a
+Step 5/23 : RUN apt-get update -y
+ ---> Running in 661df7f56cb9
 Get:1 http://deb.debian.org/debian bullseye InRelease [116 kB]
 Get:2 http://deb.debian.org/debian-security bullseye-security InRelease [48.4 kB]
 Get:3 http://deb.debian.org/debian bullseye-updates InRelease [44.1 kB]
 Get:4 http://deb.debian.org/debian bullseye/main amd64 Packages [8183 kB]
-Get:5 http://deb.debian.org/debian-security bullseye-security/main amd64 Packages [210 kB]
+Get:5 http://deb.debian.org/debian-security bullseye-security/main amd64 Packages [214 kB]
 Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [14.6 kB]
-Fetched 8616 kB in 2s (3668 kB/s)
+Fetched 8620 kB in 15s (570 kB/s)
 Reading package lists...
-Removing intermediate container 098230f22767
- ---> 6a9add37a8fb
-Step 6/21 : RUN echo "deb-src http://deb.debian.org/debian bullseye main" >> /etc/apt/sources.list
- ---> Running in 70b750cef083
-Removing intermediate container 70b750cef083
- ---> 24a4115b1056
-Step 7/21 : RUN echo "deb-src http://deb.debian.org/debian-security bullseye-security main" >> /etc/apt/sources.list
- ---> Running in 1be5e0dcd77c
-Removing intermediate container 1be5e0dcd77c
- ---> cddc96afad96
-Step 8/21 : RUN apt-get update -y
- ---> Running in f13149213713
+Removing intermediate container 661df7f56cb9
+ ---> 3b05b0812cba
+Step 6/23 : RUN echo "deb-src http://deb.debian.org/debian bullseye main" >> /etc/apt/sources.list
+ ---> Running in 071c158178e7
+Removing intermediate container 071c158178e7
+ ---> 3a2810e35cef
+Step 7/23 : RUN echo "deb-src http://deb.debian.org/debian-security bullseye-security main" >> /etc/apt/sources.list
+ ---> Running in 0d4468b1fd0a
+Removing intermediate container 0d4468b1fd0a
+ ---> fe32b8c664fa
+Step 8/23 : RUN apt-get update -y
+ ---> Running in 7d1a5e35d571
 Hit:1 http://deb.debian.org/debian bullseye InRelease
 Hit:2 http://deb.debian.org/debian-security bullseye-security InRelease
 Hit:3 http://deb.debian.org/debian bullseye-updates InRelease
 Get:4 http://deb.debian.org/debian bullseye/main Sources [8634 kB]
-Get:5 http://deb.debian.org/debian-security bullseye-security/main Sources [173 kB]
-Fetched 8807 kB in 3s (3064 kB/s)
+Get:5 http://deb.debian.org/debian-security bullseye-security/main Sources [176 kB]
+Fetched 8810 kB in 16s (552 kB/s)
 Reading package lists...
-Removing intermediate container f13149213713
- ---> 6da481ce9b88
-Step 9/21 : RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential git-buildpackage dos2unix
- ---> Running in 06b27aff429e
+Removing intermediate container 7d1a5e35d571
+ ---> 43b5bf086d74
+Step 9/23 : RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential git-buildpackage dos2unix
+ ---> Running in df3efdcaa565
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -146,7 +146,7 @@ The following NEW packages will be installed:
   perl-modules-5.32 perl-openssl-defaults pinentry-curses python3
   python3-dateutil python3-minimal python3-pkg-resources python3-six python3.9
   python3.9-minimal readline-common sensible-utils wdiff xz-utils
-0 upgraded, 144 newly installed, 0 to remove and 2 not upgraded.
+0 upgraded, 144 newly installed, 0 to remove and 0 not upgraded.
 Need to get 101 MB of archives.
 After this operation, 388 MB of additional disk space will be used.
 Get:1 http://deb.debian.org/debian bullseye/main amd64 bsdextrautils amd64 2.36.1-8+deb11u1 [145 kB]
@@ -223,7 +223,7 @@ Get:71 http://deb.debian.org/debian bullseye/main amd64 libfakeroot amd64 1.25.3
 Get:72 http://deb.debian.org/debian bullseye/main amd64 fakeroot amd64 1.25.3-1.1 [87.0 kB]
 Get:73 http://deb.debian.org/debian bullseye/main amd64 libassuan0 amd64 2.5.3-7.1 [50.5 kB]
 Get:74 http://deb.debian.org/debian bullseye/main amd64 gpgconf amd64 2.2.27-2+deb11u2 [548 kB]
-Get:75 http://deb.debian.org/debian bullseye/main amd64 libksba8 amd64 1.5.0-3+deb11u1 [123 kB]
+Get:75 http://deb.debian.org/debian-security bullseye-security/main amd64 libksba8 amd64 1.5.0-3+deb11u2 [123 kB]
 Get:76 http://deb.debian.org/debian bullseye/main amd64 libsasl2-modules-db amd64 2.1.27+dfsg-2.1+deb11u1 [69.1 kB]
 Get:77 http://deb.debian.org/debian bullseye/main amd64 libsasl2-2 amd64 2.1.27+dfsg-2.1+deb11u1 [106 kB]
 Get:78 http://deb.debian.org/debian bullseye/main amd64 libldap-2.4-2 amd64 2.4.57+dfsg-3+deb11u1 [232 kB]
@@ -294,7 +294,7 @@ Get:142 http://deb.debian.org/debian bullseye/main amd64 python3-dateutil all 2.
 Get:143 http://deb.debian.org/debian bullseye/main amd64 python3-pkg-resources all 52.0.0-4 [190 kB]
 Get:144 http://deb.debian.org/debian bullseye/main amd64 git-buildpackage all 0.9.22 [1003 kB]
 [91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 101 MB in 31s (3225 kB/s)
+[0mFetched 101 MB in 3min 39s (461 kB/s)
 Selecting previously unselected package bsdextrautils.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6661 files and directories currently installed.)
 Preparing to unpack .../00-bsdextrautils_2.36.1-8+deb11u1_amd64.deb ...
@@ -525,8 +525,8 @@ Selecting previously unselected package gpgconf.
 Preparing to unpack .../050-gpgconf_2.2.27-2+deb11u2_amd64.deb ...
 Unpacking gpgconf (2.2.27-2+deb11u2) ...
 Selecting previously unselected package libksba8:amd64.
-Preparing to unpack .../051-libksba8_1.5.0-3+deb11u1_amd64.deb ...
-Unpacking libksba8:amd64 (1.5.0-3+deb11u1) ...
+Preparing to unpack .../051-libksba8_1.5.0-3+deb11u2_amd64.deb ...
+Unpacking libksba8:amd64 (1.5.0-3+deb11u2) ...
 Selecting previously unselected package libsasl2-modules-db:amd64.
 Preparing to unpack .../052-libsasl2-modules-db_2.1.27+dfsg-2.1+deb11u1_amd64.deb ...
 Unpacking libsasl2-modules-db:amd64 (2.1.27+dfsg-2.1+deb11u1) ...
@@ -734,7 +734,7 @@ Unpacking python3-pkg-resources (52.0.0-4) ...
 Selecting previously unselected package git-buildpackage.
 Preparing to unpack .../120-git-buildpackage_0.9.22_all.deb ...
 Unpacking git-buildpackage (0.9.22) ...
-Setting up libksba8:amd64 (1.5.0-3+deb11u1) ...
+Setting up libksba8:amd64 (1.5.0-3+deb11u2) ...
 Setting up media-types (4.0.0) ...
 Setting up libpipeline1:amd64 (1.5.3-1) ...
 Setting up wdiff (1.2.2-2+b1) ...
@@ -887,10 +887,10 @@ Updating certificates in /etc/ssl/certs...
 0 added, 0 removed; done.
 Running hooks in /etc/ca-certificates/update.d...
 done.
-Removing intermediate container 06b27aff429e
- ---> 9f4e3183aea1
-Step 10/21 : RUN git clone --recursive -b 15.7 https://github.com/rhboot/shim.git shim
- ---> Running in 4baabe0ef4ff
+Removing intermediate container df3efdcaa565
+ ---> 2bd496aad687
+Step 10/23 : RUN git clone --recursive -b 15.7 https://github.com/rhboot/shim.git shim
+ ---> Running in 7a9fb0dc19e4
 [91mCloning into 'shim'...
 [0m[91mNote: switching to '11491619f4336fef41c3519877ba242161763580'.
 
@@ -912,26 +912,36 @@ Turn off this advice by setting config variable advice.detachedHead to false
 [0m[91mSubmodule 'gnu-efi' (https://github.com/rhboot/gnu-efi.git) registered for path 'gnu-efi'
 [0m[91mCloning into '/shim/gnu-efi'...
 [0mSubmodule path 'gnu-efi': checked out '03670e14f263ad571bf0f39dffa9b8d23535f4d3'
-Removing intermediate container 4baabe0ef4ff
- ---> bc398d4568cb
-Step 11/21 : COPY shimx64.efi /
- ---> 5e87913a834f
-Step 12/21 : COPY certus.cer /shim/pub.cer
- ---> a5dc506670ea
-Step 13/21 : COPY sbat.certus.csv /shim/data/
- ---> bd4749490e81
-Step 14/21 : WORKDIR /shim
- ---> Running in dd1c2b98093e
-Removing intermediate container dd1c2b98093e
- ---> 7213478cbd67
-Step 15/21 : RUN git checkout 657b2483ca6e9fcf2ad8ac7ee577ff546d24c3aa
- ---> Running in b81c300c892e
+Removing intermediate container 7a9fb0dc19e4
+ ---> 69659188a7cf
+Step 11/23 : COPY shimx64.efi /
+ ---> 42431bad71d2
+Step 12/23 : COPY certus.cer /shim/pub.cer
+ ---> 28e280278f18
+Step 13/23 : COPY sbat.certus.csv /shim/data/
+ ---> 2bdef0a03446
+Step 14/23 : COPY shim-patches/* /shim/
+ ---> ff9f2b323e49
+Step 15/23 : WORKDIR /shim
+ ---> Running in 948564dae86c
+Removing intermediate container 948564dae86c
+ ---> dd8d9b8d941a
+Step 16/23 : RUN git checkout 657b2483ca6e9fcf2ad8ac7ee577ff546d24c3aa
+ ---> Running in 9138309263e8
 [91mPrevious HEAD position was 1149161 Update version to 15.7
 [0m[91mHEAD is now at 657b248 Make sbat_var.S parse right with buggy gcc/binutils
-[0mRemoving intermediate container b81c300c892e
- ---> 6b7f7e0d51fc
-Step 16/21 : RUN make VENDOR_CERT_FILE=pub.cer
- ---> Running in 01c8c50de5bd
+[0mRemoving intermediate container 9138309263e8
+ ---> 3c6b4ef48ee8
+Step 17/23 : RUN patch < a53b9f7ceec1dfa1487f4d675573449c5b2a16fb.patch
+ ---> Running in 51d5114a9d3d
+patching file BUILDING
+patching file Make.defaults
+patching file Makefile
+patching file post-process-pe.c
+Removing intermediate container 51d5114a9d3d
+ ---> 5a73bde381c4
+Step 18/23 : RUN make VENDOR_CERT_FILE=pub.cer
+ ---> Running in ce0b389b69ab
 sed	-e "s,@@VERSION@@,15.7," \
 	-e "s,@@UNAME@@,Linux x86_64 unknown unknown GNU/Linux," \
 	-e "s,@@COMMIT@@,657b2483ca6e9fcf2ad8ac7ee577ff546d24c3aa," \
@@ -947,9 +957,9 @@ gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protec
 gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/10/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.7/"' -DVENDOR_CERT_FILE=\"pub.cer\"   -c -o errlog.o errlog.c
 gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/10/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.7/"' -DVENDOR_CERT_FILE=\"pub.cer\"   -c -o sbat.o sbat.c
 dos2unix -r -l -F -f -n data/sbat.certus.csv sbat.certus.csv
+tail -c1 sbat.certus.csv | read -r _ || echo >> sbat.certus.csv # ensure a trailing newline
 [91mdos2unix: converting file data/sbat.certus.csv to file sbat.certus.csv in Unix format...
-[0mtail -c1 sbat.certus.csv | read -r _ || echo >> sbat.certus.csv # ensure a trailing newline
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/10/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.7/"' -DVENDOR_CERT_FILE=\"pub.cer\" -x c -c -o sbat_data.o /dev/null
+[0mgcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/10/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.7/"' -DVENDOR_CERT_FILE=\"pub.cer\" -x c -c -o sbat_data.o /dev/null
 objcopy --add-section .sbat=/shim/data/sbat.csv \
 	--set-section-flags .sbat=contents,alloc,load,readonly,data \
 	sbat_data.o
@@ -1516,7 +1526,9 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame \
 	-j .vendor_cert -j .sbat -j .sbatlevel \
 	--target efi-app-x86_64 shimx64.so shimx64.efi
-./post-process-pe -vv shimx64.efi
+./post-process-pe -vv  shimx64.efi
+set_dll_characteristics():354: Updating DLL Characteristics from 0x0000 to 0x0100
+fix_checksum():412: Updating checksum from 0x000ef225 to 0x000ef325
 objcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame -j .sbat \
@@ -1552,35 +1564,39 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame \
 	-j .vendor_cert -j .sbat -j .sbatlevel \
 	--target efi-app-x86_64 mmx64.so mmx64.efi
-./post-process-pe -vv mmx64.efi
+./post-process-pe -vv  mmx64.efi
+set_dll_characteristics():354: Updating DLL Characteristics from 0x0000 to 0x0100
+fix_checksum():412: Updating checksum from 0x000d4b4d to 0x000d4c4d
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame \
 	-j .vendor_cert -j .sbat -j .sbatlevel \
 	--target efi-app-x86_64 fbx64.so fbx64.efi
-./post-process-pe -vv fbx64.efi
-Removing intermediate container 01c8c50de5bd
- ---> 322f17c9d351
-Step 17/21 : RUN hexdump -Cv /shim/shimx64.efi > build
- ---> Running in ab855be4f265
-Removing intermediate container ab855be4f265
- ---> db3e927e836b
-Step 18/21 : RUN hexdump -Cv /shimx64.efi > orig
- ---> Running in 27120a942b1b
-Removing intermediate container 27120a942b1b
- ---> 70afa61cdaef
-Step 19/21 : RUN diff -u orig build
- ---> Running in e396d3955e1c
-Removing intermediate container e396d3955e1c
- ---> d91b56d9d37e
-Step 20/21 : RUN sha256sum /shimx64.efi /shim/shimx64.efi
- ---> Running in 542fcf259248
-68922e37e7c8bb580560990eee080da41ccfc99eefa5c55dd21ccecd50eb6231  /shimx64.efi
-68922e37e7c8bb580560990eee080da41ccfc99eefa5c55dd21ccecd50eb6231  /shim/shimx64.efi
-Removing intermediate container 542fcf259248
- ---> ccde82fe8288
-Step 21/21 : RUN objdump -s -j .sbat /shim/shimx64.efi
- ---> Running in 2e28cad6bbc8
+./post-process-pe -vv  fbx64.efi
+set_dll_characteristics():354: Updating DLL Characteristics from 0x0000 to 0x0100
+fix_checksum():412: Updating checksum from 0x00018b26 to 0x00018c26
+Removing intermediate container ce0b389b69ab
+ ---> c3d971bda872
+Step 19/23 : RUN hexdump -Cv /shim/shimx64.efi > build
+ ---> Running in cea8cf37e9e3
+Removing intermediate container cea8cf37e9e3
+ ---> c6eb74513061
+Step 20/23 : RUN hexdump -Cv /shimx64.efi > orig
+ ---> Running in 010ae4a1b9e4
+Removing intermediate container 010ae4a1b9e4
+ ---> 4933183f77c5
+Step 21/23 : RUN diff -u orig build
+ ---> Running in b6b592e744ff
+Removing intermediate container b6b592e744ff
+ ---> 791135ffe72c
+Step 22/23 : RUN sha256sum /shimx64.efi /shim/shimx64.efi
+ ---> Running in f063dc9be914
+547e7129ddf97a16a5ce03f50b5577280b070fb2a26f597e11235be934157fcd  /shimx64.efi
+547e7129ddf97a16a5ce03f50b5577280b070fb2a26f597e11235be934157fcd  /shim/shimx64.efi
+Removing intermediate container f063dc9be914
+ ---> 52e6bc19f63b
+Step 23/23 : RUN objdump -s -j .sbat /shim/shimx64.efi
+ ---> Running in 7f3ef91dadf9
 
 /shim/shimx64.efi:     file format pei-x86-64
 
@@ -1599,6 +1615,7 @@ Contents of section .sbat:
  d10b0 372c6d61 696c3a73 65637572 69747940  7,mail:security@
  d10c0 63657274 7573736f 66747761 72652e72  certussoftware.r
  d10d0 6f0a                                 o.              
-Removing intermediate container 2e28cad6bbc8
- ---> c64e765d6435
-Successfully built c64e765d6435
+Removing intermediate container 7f3ef91dadf9
+ ---> 19420e4f3273
+Successfully built 19420e4f3273
+Successfully tagged shim/shim-review:15.7-1
