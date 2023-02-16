@@ -85,6 +85,7 @@ https://github.com/rhboot/shim/releases/tag/15.7
 ### What patches are being applied and why:
 -------------------------------------------------------------------------------
 Backport upstream commit 657b2483ca6e9fcf2ad8ac7ee577ff546d24c3aa to fix issue #533. (Make sbat_var.S parse right with buggy gcc/binutils)
+Backport upstream commit a53b9f7ceec1dfa1487f4d675573449c5b2a16fb to fix issue #307. (Enable the NX compatibility flag by default)
 
 -------------------------------------------------------------------------------
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
