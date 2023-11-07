@@ -159,13 +159,16 @@ Yes.
 *******************************************************************************
 ### Do you build your signed kernel with additional local patches? What do they do?
 *******************************************************************************
-No additional local patches, just custom config.
+Yes, we are building our signed kernel with the below described additional patches:
+- [aufs-standalone](https://github.com/sfjro/aufs-standalone), AUFS adds file system multilayer unification support.
+- [linux-t2-patches](https://github.com/t2linux/linux-t2-patches), These patches provide hardware support and compatibility improvements for MacBooks with the T2 chip, things that are not yet available in the upstream kernel.
+- [linux-surface](https://github.com/linux-surface/linux-surface), These patches provide hardware support and compatibility improvements for Microsoft Surface devices, things that are not yet available in the upstream kernel.
 
 *******************************************************************************
 ### Do you use an ephemeral key for signing kernel modules?
 ### If not, please describe how you ensure that one kernel build does not load modules built for another kernel.
 *******************************************************************************
-[your text here]
+Yes, we do use ephemeral keys for every kernel build.
 
 *******************************************************************************
 ### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
@@ -233,20 +236,20 @@ grub SBAT:
 
 ```
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-grub,3,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
-grub.debian,4,Debian,grub2,2.06-5,https://tracker.debian.org/pkg/grub2
-grub.certus,1,Certus Software S.R.L.,grub2,2.06-5,mail:security@certussoftware.ro
+grub,4,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
+grub.debian,4,Debian,grub2,2.06-13+deb12u1,https://tracker.debian.org/pkg/grub2
+grub.certus,1,Certus Software S.R.L.,grub2,2.06-13+deb12u1,mail:security@certussoftware.ro
 ```
 
 *******************************************************************************
 ### Which modules are built into your signed GRUB2 image?
 *******************************************************************************
-`iso9660 linux normal search efi_gop efi_uga all_video gfxmenu linuxefi`
+`iso9660 linux normal search efi_gop efi_uga all_video gfxmenu`
 
 *******************************************************************************
 ### What is the origin and full version number of your bootloader (GRUB2 or other)?
 *******************************************************************************
-2.06-5 from https://salsa.debian.org/grub-team/grub/-/tree/debian/2.06-5/debian
+2.06-13+deb12u1 from https://salsa.debian.org/grub-team/grub/-/tree/debian/2.06-13+deb12u1/debian
 
 *******************************************************************************
 ### If your SHIM launches any other components, please provide further details on what is launched.
@@ -270,7 +273,7 @@ It launched grub, nothing else.
 *******************************************************************************
 ### What kernel are you using? Which patches does it includes to enforce Secure Boot?
 *******************************************************************************
-Kernel 5.15.42 and has secure boot enabled.
+Kernel 6.1.38 and has secure boot enabled(CONFIG_LOCK_DOWN_IN_EFI_SECURE_BOOT).
 
 *******************************************************************************
 ### Add any additional information you think we may need to validate this shim.
