@@ -244,7 +244,7 @@ grub.certus,1,Certus Software S.R.L.,grub2,2.06-13+deb12u1,mail:security@certuss
 *******************************************************************************
 ### Which modules are built into your signed GRUB2 image?
 *******************************************************************************
-`iso9660 linux normal search efi_gop efi_uga all_video gfxmenu`
+`iso9660 linux normal search efi_gop efi_uga all_video gfxmenu linuxefi`
 
 *******************************************************************************
 ### What is the origin and full version number of your bootloader (GRUB2 or other)?
